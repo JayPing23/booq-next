@@ -231,17 +231,19 @@ export function AppShell({ children, user, currentView, onViewChange, onBookSele
             </div>
 
             {/* User Actions */}
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="sm" className="relative">
+            <div className="flex items-center gap-3">
+              <Button variant="ghost" size="sm" className="relative rounded-full h-10 w-10 p-0">
                 <Bell className="h-5 w-5" />
-                <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs">
+                <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs bg-primary">
                   3
                 </Badge>
               </Button>
               
-              <Avatar className="h-8 w-8">
+              <Avatar className="h-9 w-9 ring-2 ring-primary/20">
                 <AvatarImage src={user.avatar} alt={user.name} />
-                <AvatarFallback>{user.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                <AvatarFallback className="bg-primary/10 text-primary font-medium">
+                  {user.name.split(' ').map(n => n[0]).join('')}
+                </AvatarFallback>
               </Avatar>
             </div>
           </div>
