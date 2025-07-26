@@ -126,14 +126,14 @@ export function BookDiscoveryFeed({ onBookSelect }) {
     }
 
     return (
-      <div className="mb-12">
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-primary/10 rounded-lg">
+      <div className="mb-16">
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-primary/10 rounded-xl">
               <category.icon className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h2 className="font-crimson text-2xl font-semibold">{category.title}</h2>
+              <h2 className="font-crimson text-2xl font-bold text-foreground">{category.title}</h2>
               <p className="text-sm text-muted-foreground">{category.subtitle}</p>
             </div>
           </div>
@@ -143,7 +143,7 @@ export function BookDiscoveryFeed({ onBookSelect }) {
               variant="outline"
               size="sm"
               onClick={() => scroll('left')}
-              className="h-8 w-8 p-0"
+              className="h-10 w-10 p-0 rounded-full border-border/50 hover:border-primary/50"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -151,7 +151,7 @@ export function BookDiscoveryFeed({ onBookSelect }) {
               variant="outline"
               size="sm"
               onClick={() => scroll('right')}
-              className="h-8 w-8 p-0"
+              className="h-10 w-10 p-0 rounded-full border-border/50 hover:border-primary/50"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -160,7 +160,7 @@ export function BookDiscoveryFeed({ onBookSelect }) {
 
         <div 
           ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scrollbar-thin pb-4 carousel-container"
+          className="flex gap-6 overflow-x-auto scrollbar-thin pb-4 carousel-container"
           style={{ scrollSnapType: 'x mandatory' }}
         >
           {category.books.map((book, bookIndex) => (
