@@ -78,18 +78,23 @@ export function AppShell({ children, user, currentView, onViewChange, onBookSele
 
       {/* Navigation */}
       <ScrollArea className="flex-1 py-4">
-        <nav className="space-y-2 px-4">
+        <nav className="space-y-1 px-4">
           {navigationItems.map((item) => (
             <Button
               key={item.id}
               variant={currentView === item.id ? 'default' : 'ghost'}
-              className="w-full justify-start h-12"
+              className={cn(
+                "w-full justify-start h-12 rounded-xl transition-all duration-200",
+                currentView === item.id 
+                  ? "bg-primary text-primary-foreground shadow-lg" 
+                  : "hover:bg-primary/5 text-muted-foreground hover:text-foreground"
+              )}
               onClick={() => onViewChange(item.id)}
             >
               <item.icon className="mr-3 h-5 w-5" />
               <div className="text-left">
                 <div className="font-medium">{item.label}</div>
-                <div className="text-xs text-muted-foreground">{item.description}</div>
+                <div className="text-xs opacity-70">{item.description}</div>
               </div>
             </Button>
           ))}
