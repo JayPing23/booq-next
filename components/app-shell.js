@@ -24,6 +24,7 @@ import {
   Sun
 } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { cn } from '@/lib/utils'
 
 const navigationItems = [
   { id: 'home', label: 'Home', icon: Home, description: 'Friend activity feed' },
