@@ -145,25 +145,25 @@ export function BookCard({ book, variant = 'standard', onSelect, className }) {
     return (
       <Card 
         className={cn(
-          "group cursor-pointer book-hover bg-card/50 backdrop-blur-sm border-0 shadow-md",
+          "group cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-lg bg-card border-0 shadow-sm",
           className
         )}
         onClick={handleCardClick}
       >
         <CardContent className="p-0">
-          <div className="relative">
+          <div className="relative overflow-hidden rounded-t-lg">
             <img
               src={book.cover}
               alt={`${book.title} cover`}
-              className="w-full h-64 object-cover rounded-t-lg"
+              className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
             />
             
             {/* Quick actions */}
-            <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               <Button
                 size="sm"
                 variant="secondary"
-                className="h-7 w-7 p-0 bg-white/90 hover:bg-white"
+                className="h-8 w-8 p-0 bg-white/95 hover:bg-white shadow-lg backdrop-blur-sm"
                 onClick={handleAddToLibrary}
               >
                 {isInLibrary ? (
@@ -175,17 +175,17 @@ export function BookCard({ book, variant = 'standard', onSelect, className }) {
             </div>
 
             {/* Rating overlay */}
-            <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 rounded text-xs flex items-center gap-1">
+            <div className="absolute bottom-2 left-2 bg-black/80 text-white px-2 py-1 rounded text-xs flex items-center gap-1 backdrop-blur-sm">
               <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
               {book.rating}
             </div>
           </div>
 
-          <div className="p-3">
-            <h3 className="font-crimson font-semibold text-sm leading-tight mb-1 line-clamp-2">
+          <div className="p-4">
+            <h3 className="font-crimson font-bold text-sm leading-tight mb-2 line-clamp-2 text-foreground">
               {book.title}
             </h3>
-            <p className="text-xs text-muted-foreground mb-2">by {book.author}</p>
+            <p className="text-xs text-muted-foreground mb-3">by {book.author}</p>
             
             {book.friendsRead > 0 && (
               <div className="flex items-center gap-1 text-xs text-muted-foreground">
