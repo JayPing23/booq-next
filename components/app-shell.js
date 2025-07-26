@@ -163,13 +163,13 @@ export function AppShell({ children, user, currentView, onViewChange, onBookSele
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-40">
+        <header className="border-b border-border/50 bg-background/80 backdrop-blur-md sticky top-0 z-40 shadow-sm">
           <div className="flex items-center justify-between p-4">
             {/* Mobile Menu */}
             <div className="lg:hidden">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="sm">
+                  <Button variant="ghost" size="sm" className="rounded-full">
                     <Menu className="h-5 w-5" />
                   </Button>
                 </SheetTrigger>
@@ -185,7 +185,7 @@ export function AppShell({ children, user, currentView, onViewChange, onBookSele
                 <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Search books, authors, friends..."
-                  className="pl-10 pr-4"
+                  className="pl-10 pr-4 border-border/50 bg-background/50 focus:bg-background transition-colors rounded-full"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => setIsSearchFocused(true)}
