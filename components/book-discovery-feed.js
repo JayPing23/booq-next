@@ -185,20 +185,24 @@ export function BookDiscoveryFeed({ onBookSelect }) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-primary/20 via-secondary/10 to-background border-b border-border">
-        <div className="container mx-auto px-6 py-12">
+      <div className="relative bg-gradient-to-br from-primary/5 via-background to-background border-b">
+        <div className="container mx-auto px-6 py-16">
           <div className="max-w-4xl">
-            <h1 className="font-crimson text-4xl md:text-6xl font-bold mb-4">
+            <h1 className="font-crimson text-4xl md:text-5xl font-bold mb-6 text-foreground">
               Discover your next 
               <span className="text-primary"> great read</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
               Personalized recommendations based on what you love and what your friends are reading
             </p>
             
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {['Science Fiction', 'Mystery', 'Philosophy', 'Biography'].map((genre) => (
-                <Badge key={genre} variant="secondary" className="px-4 py-2">
+                <Badge 
+                  key={genre} 
+                  variant="outline" 
+                  className="px-4 py-2 border-primary/20 hover:border-primary/40 transition-colors cursor-pointer"
+                >
                   {genre}
                 </Badge>
               ))}
