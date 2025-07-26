@@ -71,7 +71,7 @@ export function AppShell({ children, user, currentView, onViewChange, onBookSele
   const Sidebar = () => (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div className="p-6 border-b border-border">
+      <div className="p-6 border-b border-border/50">
         <h1 className="font-crimson text-3xl font-bold text-primary">booq</h1>
         <p className="text-sm text-muted-foreground mt-1">Social Book Discovery</p>
       </div>
